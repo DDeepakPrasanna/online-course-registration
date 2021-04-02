@@ -1,0 +1,47 @@
+create database ocr;
+
+use ocr;
+
+
+create table course(
+cour_id varchar(5) primary key,
+cour_type varchar(30),
+cour_dur varchar(20),
+cour_name varchar(30),
+c_fee int);
+
+
+create table instructor(
+ins_id varchar(10) primary key,
+ins_spec varchar(30),
+ins_name varchar(30),
+ins_exp int,
+cour_id varchar(5));
+
+
+create table login(
+login_id int,
+login_username varchar(10) primary key,
+login_password varchar(10));
+
+
+insert into login values("1234","admin","password");
+
+
+create table student(
+stu_id varchar(10) primary key,
+stu_name varchar(20),
+sem int,
+mail varchar(30),
+phone varchar(15),
+age int,
+cour_id varchar(10),
+t_id varchar(30));
+
+
+alter table instructor 
+add foreign key (cour_id) references course (cour_id);
+
+
+alter table student
+add foreign key (cour_id) references course (cour_id);
