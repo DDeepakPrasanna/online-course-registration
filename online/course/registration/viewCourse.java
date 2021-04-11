@@ -16,7 +16,6 @@ public class viewCourse extends JFrame implements ActionListener{
     
     
     viewCourse(){
-        //super("View Teachers Attendance");
         setSize(800,300);
         setLocation(450,150);
 
